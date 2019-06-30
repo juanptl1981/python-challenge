@@ -2,6 +2,7 @@ import os
 import csv
 
 csv_path = os.path.join("budget_data.csv") 
+pathout = os.path.join("Financial Resultss")
 
 with open(csv_path, newline="") as csvfile:  
     reader = csv.reader(csvfile, delimiter=",")
@@ -42,3 +43,11 @@ with open(csv_path, newline="") as csvfile:
     print(f"Greatest Increase in Profits:{max_profit_loss_change_date} - $ {max_profit_loss_change}")
     print(f"Greatest Decrease in Profits:{min_profit_loss_change_date} - $ {min_profit_loss_change}")
 
+with open(pathout, "w") as txt_file:
+    
+    txt_file.write("Financial Analysis")
+    txt_file.write("-------------------------")
+    txt_file.write(f"Total Months: {len(total_month)}")
+    txt_file.write(f"Total Profit/Loss: $ {sum(profit_loss)}")
+    txt_file.write(f"Greatest Increase in Profits:{max_profit_loss_change_date} - $ {max_profit_loss_change}")
+    txt_file.write(f"Greatest Decrease in Profits:{min_profit_loss_change_date} - $ {min_profit_loss_change}")
