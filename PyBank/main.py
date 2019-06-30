@@ -2,7 +2,7 @@ import os
 import csv
 
 csv_path = os.path.join("budget_data.csv") 
-pathout = os.path.join("Financial Resultss")
+pathout = os.path.join("Financial Results.txt")
 
 with open(csv_path, newline="") as csvfile:  
     reader = csv.reader(csvfile, delimiter=",")
